@@ -1,5 +1,13 @@
 # Blueprint Management 2
 
+## Integrantes
+
+```
+Nicolas Cardenas Chaparro
+
+Daniel Rodriguez Villalba
+```
+
 ## Description
 
 
