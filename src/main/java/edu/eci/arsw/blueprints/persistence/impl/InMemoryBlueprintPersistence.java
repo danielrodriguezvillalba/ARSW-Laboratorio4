@@ -37,9 +37,7 @@ public class InMemoryBlueprintPersistence implements BlueprintsPersistence{
         blueprints.put(new Tuple<>(bp.getAuthor(),bp.getName()), bp);
         blueprints.put(new Tuple<>(bp1.getAuthor(),bp1.getName()), bp1);
         blueprints.put(new Tuple<>(bp2.getAuthor(),bp2.getName()), bp2);
-        blueprints.put(new Tuple<>(bp3.getAuthor(),bp3.getName()), bp3);
-        
-        
+        blueprints.put(new Tuple<>(bp3.getAuthor(),bp3.getName()), bp3);        
     }    
     
     @Override
@@ -58,11 +56,14 @@ public class InMemoryBlueprintPersistence implements BlueprintsPersistence{
     }
 
     @Override
-    public Set<Blueprint> getBlueprintByAuthor(String author){
+    public Set<Blueprint> getBlueprintByAuthor(String author) throws BlueprintNotFoundException{
         Set<Blueprint> temporal = new HashSet<>();
         for(int i = 1 ; i < blueprints.values().size();i++){
             Blueprint bluT = (Blueprint) blueprints.values().toArray()[i];
             if(bluT.getAuthor() == author){temporal.add(bluT);} 
+        }
+        if(temporal.isEmpty()){
+            throw new BlueprintNotFoundException("The given author doesn´t exists: "+author);
         }
         return temporal;
     }
