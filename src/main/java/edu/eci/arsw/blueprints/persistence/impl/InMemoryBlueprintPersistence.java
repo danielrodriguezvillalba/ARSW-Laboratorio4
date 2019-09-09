@@ -60,7 +60,7 @@ public class InMemoryBlueprintPersistence implements BlueprintsPersistence{
         Set<Blueprint> temporal = new HashSet<>();
         for(int i = 1 ; i < blueprints.values().size();i++){
             Blueprint bluT = (Blueprint) blueprints.values().toArray()[i];
-            if(bluT.getAuthor() == author){temporal.add(bluT);} 
+            if(bluT.getAuthor().equals(author)){temporal.add(bluT);} 
         }
         if(temporal.isEmpty()){
             throw new BlueprintNotFoundException("The given author doesn´t exists: "+author);
