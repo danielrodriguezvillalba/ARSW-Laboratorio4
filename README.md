@@ -1,4 +1,4 @@
-# Blueprint Management 2
+﻿# Blueprint Management 2
 
 ## Integrantes
 
@@ -79,13 +79,20 @@ public ResponseEntity<?> manejadorPostRecursoXX(@RequestBody TipoXX o){
 
   - To test that the planes resource correctly accepts and interprets POST requests, use the Unix curl command. This command has as a parameter the type of content handled (in this case JSON), and the message body that will go with the request, which in this case must be a JSON document equivalent to the Client class (where instead of {JSON Object}, a JSON object corresponding to a new order will be used.
   
+Se utilizo el siguiente comando para poder ejecutar el HTTP Request (Las comillas debido a un error que bota windows).
+
 ```
-$ curl -i -X POST -HContent-Type:application/json -HAccept:application/json http://URL_del_recurso_ordenes -d '{ObjetoJSON}'
+curl -i -X POST -HContent-Type:application/json -HAccept:application/json http://localhost:8080/blueprints -d "{"""author""":"""checho""","""points""":[{"""x""":10,"""y""":10},{"""x""":15,"""y""":0}],"""name""":"""obra"""}"
 ```
 
-  - With the above, register a new plane (to 'design' a JSON object, you can use this tool). It can be based on the JSON format shown in the browser when consulting an order with the GET method.
   - Taking into account the author and name of the registered plan, verify that it can be obtained through a GET request to the corresponding resource /blueprints/{author}/{bpname}.
+
+El resultado de la ejecucion de este comando al consultarlo con el GET {author}/{bpname} fue el siguiente:
+
+
   - Add support to the PUT verb for resources of the form /blueprints/{author}/{bpname}, so that it is possible to update a specific plane.
+
+
   
 ## PART III
 
