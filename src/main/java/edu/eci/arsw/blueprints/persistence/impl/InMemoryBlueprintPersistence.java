@@ -54,7 +54,9 @@ public class InMemoryBlueprintPersistence implements BlueprintsPersistence{
 
     @Override
     public Blueprint getBlueprint(String author, String bprintname) throws BlueprintNotFoundException {
-        return blueprints.get(new Tuple<>(author, bprintname));
+        Blueprint a = blueprints.get(new Tuple<>(author, bprintname));
+        if (a == null){throw new BlueprintNotFoundException("No se encontro lo pedido");}
+        return a;
     }
 
     @Override
@@ -78,5 +80,11 @@ public class InMemoryBlueprintPersistence implements BlueprintsPersistence{
             temporal.add(bluT);
         }
         return temporal;
+    }
+
+    @Override
+    public void updateBlueprint(Blueprint bp, String author, String bpName) {
+        blueprints.remove(new Tuple<>(author,bpName));
+        blueprints.put(new Tuple<>(bp.getAuthor(),bp.getName()), bp);
     }
 }

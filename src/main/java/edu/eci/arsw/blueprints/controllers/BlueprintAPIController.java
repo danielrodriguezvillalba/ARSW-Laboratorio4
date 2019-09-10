@@ -83,4 +83,19 @@ public class BlueprintAPIController {
         }
 
     }
+
+    @RequestMapping(method = RequestMethod.PUT)
+    public ResponseEntity<?> manejadorPutRecursoBlueprint(
+            @RequestBody Blueprint bp,
+            @PathVariable("author") String author,
+            @PathVariable("bpname") String bpName) {
+        try {
+            service.updateBlueprint(bp,author, bpName);
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        } catch (Exception ex) {
+            Logger.getLogger(BlueprintAPIController.class.getName()).log(Level.SEVERE, null, ex);
+            return new ResponseEntity<>("ERROR 403", HttpStatus.FORBIDDEN);
+        }
+
+    }
 }
