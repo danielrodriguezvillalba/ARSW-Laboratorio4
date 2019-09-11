@@ -69,6 +69,8 @@ El resultado obtenido en el browser es el siguiente, el cual muestra todos los b
 
   - Add the handling of POST requests (creation of new plans), so that an http client can register a new order by making a POST request to the resource planes, and sending as content of the request all the detail of said resource through a JSON document. For this, consider the following example, which considers - by consistency with the HTTP protocol - the handling of HTTP status codes (in case of success or error):
 
+![Imagenes](https://github.com/danielrodriguezvillalba/ARSW-Laboratorio4/blob/master/img/Lab/POSTCode.PNG)
+
   - To test that the planes resource correctly accepts and interprets POST requests, use the Unix curl command. This command has as a parameter the type of content handled (in this case JSON), and the message body that will go with the request, which in this case must be a JSON document equivalent to the Client class (where instead of {JSON Object}, a JSON object corresponding to a new order will be used.
   
 Se utilizo el siguiente comando para poder ejecutar el HTTP Request (Las comillas debido a un error que bota windows).
@@ -81,10 +83,11 @@ curl -i -X POST -HContent-Type:application/json -HAccept:application/json http:/
 
 El resultado de la ejecucion de este comando al consultarlo con el GET {author}/{bpname} fue el siguiente:
 
+![Imagenes](https://github.com/danielrodriguezvillalba/ARSW-Laboratorio4/blob/master/img/Lab/POST.PNG)
 
   - Add support to the PUT verb for resources of the form /blueprints/{author}/{bpname}, so that it is possible to update a specific plane.
 
-
+![Imagenes](https://github.com/danielrodriguezvillalba/ARSW-Laboratorio4/blob/master/img/Lab/PUT.PNG)
   
 ## PART III
 
