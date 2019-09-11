@@ -36,10 +36,7 @@ Como se puede observar en la imagen asi se realizo las respectivas adiciones de 
     El codigo presentado, el cual hace lo requerido para el metodo GET de todos los blueprints
         
    ![Imagenes](https://github.com/danielrodriguezvillalba/ARSW-Laboratorio4/blob/master/img/Lab/AllBluePrintsCode.PNG) 
-   
-   El resultado obtenido en el browser es el siguiente, el cual muestra todos los blueprints que estan en la aplicacion
-   
-   ![Imagenes](https://github.com/danielrodriguezvillalba/ARSW-Laboratorio4/blob/master/img/Lab/AllBluePrints.PNG) 
+
 
   - Verify the operation of the application by launching the application with maven. And then sending a GET request to: http://localhost:8080/blueprints. Rectify that, in response, a JSON object is obtained with a list containing the detail of the drawings provided by default, and that the corresponding point filtering has been applied.
   
@@ -48,10 +45,25 @@ Como se puede observar en la imagen asi se realizo las respectivas adiciones de 
 2 mvn spring-boot:run
 ```
 
+El resultado obtenido en el browser es el siguiente, el cual muestra todos los blueprints que estan en la aplicacion
+   
+   ![Imagenes](https://github.com/danielrodriguezvillalba/ARSW-Laboratorio4/blob/master/img/Lab/AllBluePrints.PNG) 
+
   - Modify the controller so that it now accepts GET requests to the resource /blueprints/{author}, which returns using a JSON representation all the plans made by the author whose name is {author}. If there is no such author, you must respond with the HTTP error code 404. For this, review in the Spring documentation, section 22.3.2, the use of @PathVariable. Again, verify that when making a GET request -for example- to the resource http://localhost:8080/blueprints/juan, the set of planes associated with the author 'juan' is obtained in JSON format (adjust this to the names of author used in point 2).
+  
+  ![Imagenes](https://github.com/danielrodriguezvillalba/ARSW-Laboratorio4/blob/master/img/Lab/AuthorBlueprintsCode.PNG)
+  
+  El resultado del codigo mostrado anteriormente en el browser es el siguiente.
+  
+  ![Imagenes](https://github.com/danielrodriguezvillalba/ARSW-Laboratorio4/blob/master/img/Lab/AuthorBlueprints.PNG)
   
   - Modify the controller so that it now accepts GET requests to the resource/blueprints/{author}/{bpname}, which returns using a JSON representation only ONE plane, in this case the one made by {author} and whose name is {bpname}. Again, if there is no such author, you must respond with the HTTP 404 error code.
   
+  ![Imagenes](https://github.com/danielrodriguezvillalba/ARSW-Laboratorio4/blob/master/img/Lab/BlueprintCode.PNG)
+  
+  El resultado del codigo mostrado anteriormente en el browser es el siguiente.
+  
+  ![Imagenes](https://github.com/danielrodriguezvillalba/ARSW-Laboratorio4/blob/master/img/Lab/Blueprint.PNG)
   
 ## PART II
 
