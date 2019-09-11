@@ -25,7 +25,7 @@ From the previous component diagram (high level), the following detailed design 
   - Integrate to the base project supplied the Beans developed in the previous exercise. Just copy the classes, NOT the configuration files. Rectify that the dependency injection scheme is correctly configured with the @Service and @Autowired annotations.
   - Modify the persistence bean InMemoryBlueprintPersistence so that by default it is initialized with at least three other planes, and with two associated with the same author.
  
-Como se puede observar en la imagen asi se realizo las respectivas adiciones de los nuevos planes.
+`Como se puede observar en la imagen asi se realizo las respectivas adiciones de los nuevos planes.`
 
 ![Imagenes](https://github.com/danielrodriguezvillalba/ARSW-Laboratorio4/blob/master/img/Lab/3Adicionales.PNG)
   
@@ -33,7 +33,7 @@ Como se puede observar en la imagen asi se realizo las respectivas adiciones de 
         - Modify the BlueprintAPIController class taking into account the following example of a REST controller made with SpringMVC/SpringBoot
         - Have the BlueprintServices type bean injected into this class (which, in turn, will be injected with its persistence and point filtering dependencies).
         
-    El codigo presentado, el cual hace lo requerido para el metodo GET de todos los blueprints
+    `El codigo presentado, el cual hace lo requerido para el metodo GET de todos los blueprints`
         
    ![Imagenes](https://github.com/danielrodriguezvillalba/ARSW-Laboratorio4/blob/master/img/Lab/AllBluePrintsCode.PNG) 
 
@@ -45,7 +45,7 @@ Como se puede observar en la imagen asi se realizo las respectivas adiciones de 
 2 mvn spring-boot:run
 ```
 
-El resultado obtenido en el browser es el siguiente, el cual muestra todos los blueprints que estan en la aplicacion
+`El resultado obtenido en el browser es el siguiente, el cual muestra todos los blueprints que estan en la aplicacion`
    
    ![Imagenes](https://github.com/danielrodriguezvillalba/ARSW-Laboratorio4/blob/master/img/Lab/AllBluePrints.PNG) 
 
@@ -53,7 +53,7 @@ El resultado obtenido en el browser es el siguiente, el cual muestra todos los b
   
   ![Imagenes](https://github.com/danielrodriguezvillalba/ARSW-Laboratorio4/blob/master/img/Lab/AuthorBlueprintsCode.PNG)
   
-  El resultado del codigo mostrado anteriormente en el browser es el siguiente.
+  `El resultado del codigo mostrado anteriormente en el browser es el siguiente.`
   
   ![Imagenes](https://github.com/danielrodriguezvillalba/ARSW-Laboratorio4/blob/master/img/Lab/AuthorBlueprints.PNG)
   
@@ -61,7 +61,7 @@ El resultado obtenido en el browser es el siguiente, el cual muestra todos los b
   
   ![Imagenes](https://github.com/danielrodriguezvillalba/ARSW-Laboratorio4/blob/master/img/Lab/BlueprintCode.PNG)
   
-  El resultado del codigo mostrado anteriormente en el browser es el siguiente.
+  `El resultado del codigo mostrado anteriormente en el browser es el siguiente.`
   
   ![Imagenes](https://github.com/danielrodriguezvillalba/ARSW-Laboratorio4/blob/master/img/Lab/Blueprint.PNG)
   
@@ -73,7 +73,7 @@ El resultado obtenido en el browser es el siguiente, el cual muestra todos los b
 
   - To test that the planes resource correctly accepts and interprets POST requests, use the Unix curl command. This command has as a parameter the type of content handled (in this case JSON), and the message body that will go with the request, which in this case must be a JSON document equivalent to the Client class (where instead of {JSON Object}, a JSON object corresponding to a new order will be used.
   
-Se utilizo el siguiente comando para poder ejecutar el HTTP Request (Las comillas debido a un error que bota windows).
+`Se utilizo el siguiente comando para poder ejecutar el HTTP Request (Las comillas debido a un error que bota windows).`
 
 ```
 curl -i -X POST -HContent-Type:application/json -HAccept:application/json http://localhost:8080/blueprints -d "{"""author""":"""checho""","""points""":[{"""x""":10,"""y""":10},{"""x""":15,"""y""":0}],"""name""":"""obra"""}"
@@ -81,7 +81,7 @@ curl -i -X POST -HContent-Type:application/json -HAccept:application/json http:/
 
   - Taking into account the author and name of the registered plan, verify that it can be obtained through a GET request to the corresponding resource /blueprints/{author}/{bpname}.
 
-El resultado de la ejecucion de este comando al consultarlo con el GET {author}/{bpname} fue el siguiente:
+`El resultado de la ejecucion de este comando al consultarlo con el GET {author}/{bpname} fue el siguiente:`
 
 ![Imagenes](https://github.com/danielrodriguezvillalba/ARSW-Laboratorio4/blob/master/img/Lab/POST.PNG)
 
@@ -96,9 +96,8 @@ The BlueprintsRESTAPI component will work in a concurrent environment. That is, 
   - What race conditions could occur?
 
   - What are the respective critical regions? 
-  ```
-  Al ser las solicitudes concurrentemente se presenta una region critica en el momento de actualizar los blueprints, ya que pueden varios clientes estar cambiando el mismo blueprint
-  ```
+  
+ ` Al ser las solicitudes concurrentemente se presenta una region critica en el momento de actualizar los blueprints, ya que pueden varios clientes estar cambiando el mismo blueprint`
 
 
 Set the code to suppress race conditions. Keep in mind that simply synchronizing access to persistence/query operations will significantly degrade the API performance, so you should look for alternative strategies.
