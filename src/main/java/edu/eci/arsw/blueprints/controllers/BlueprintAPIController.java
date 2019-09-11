@@ -84,7 +84,7 @@ public class BlueprintAPIController {
 
     }
 
-    @RequestMapping(method = RequestMethod.PUT)
+    @RequestMapping(method = RequestMethod.PUT ,  path = "{author}/{bpname}")
     public ResponseEntity<?> manejadorPutRecursoBlueprint(
             @RequestBody Blueprint bp,
             @PathVariable("author") String author,
