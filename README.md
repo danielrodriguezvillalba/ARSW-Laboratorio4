@@ -87,7 +87,7 @@ El resultado de la ejecucion de este comando al consultarlo con el GET {author}/
 
   - Add support to the PUT verb for resources of the form /blueprints/{author}/{bpname}, so that it is possible to update a specific plane.
 
-![Imagenes](https://github.com/danielrodriguezvillalba/ARSW-Laboratorio4/blob/master/img/Lab/PUT.PNG)
+![Imagenes](https://github.com/danielrodriguezvillalba/ARSW-Laboratorio4/blob/master/img/Lab/PUTCode.PNG)
   
 ## PART III
 
