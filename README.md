@@ -94,6 +94,8 @@ curl -i -X POST -HContent-Type:application/json -HAccept:application/json http:/
 The BlueprintsRESTAPI component will work in a concurrent environment. That is, it will attend multiple requests simultaneously (with the stack of applications used, these requests will be attended by default across multiple threads). Given the above, you should review your API (once it works), and identify:
 
   - What race conditions could occur?
+  
+`Al hacer una consulta sobre la lista de blueprints se podria presentar una condicion de carrera, ya que al momento de acceder al recurso compartido que es la lista de blueprints, puede suceder.`
 
   - What are the respective critical regions? 
   
